@@ -1,32 +1,32 @@
 <?php
 $singerName = $singerInfo = $singerImg = "";
-if (isset($_GET['singerID'])) {
-    $singerID = $_GET['singerID'];
+if (isset($_GET['penyanyi.song'])) {
+    $penyanyi = $_GET['penyanyi.song'];
 
     $singerFilterQuery = "SELECT *
-                    FROM singers 
-                    WHERE id=$singerID";
+                    FROM song 
+                    WHERE id=$penyanyi";
 
     $result = mysqli_query($conn, $singerFilterQuery);
     $singer = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
     if (count($singer) > 0) {
-        $singerName = $singer[0]["name"];
-        $singerInfo = $singer[0]["info"];
-        $singerImg = $singer[0]["image"];
+        $singerName = $singer[0]["penyanyi.song"];
+        $singerInfo = $singer[0]["genre.song"];
+        $singerImg = $singer[0]["image_path.song"];
 
-        $songsQuery =  "SELECT songs.id, songs.title title,
+        $songsQuery =  "SELECT songsid, songs.title title,
                         songs.filePath audio, songs.imgPath img,
                         singers.name singerName, singers.id singerID
                     FROM songs 
                     LEFT JOIN singers on singers.id = songs.singerID
-                    WHERE singers.id = $singerID
+                    WHERE singers_id = $singerID
                     ORDER BY songs.dateAdded DESC";
 
         $result2 = mysqli_query($conn, $songsQuery);
         $songs = mysqli_fetch_all($result2, MYSQLI_ASSOC);
     } else {
-        redirect("404.php");
+        header("404.php");
     }
 }
 ?>

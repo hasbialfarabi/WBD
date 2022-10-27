@@ -6,7 +6,7 @@ function reformData($queryResult)
 }
 
 $favSongsQuery = "SELECT favourites.songID FROM favourites
-                  WHERE favourites.uid = $uid";
+                            WHERE favourites.uid = $uid";
 
 $result = mysqli_query($conn, $favSongsQuery);
 $queryResult = mysqli_fetch_all($result, MYSQLI_ASSOC);

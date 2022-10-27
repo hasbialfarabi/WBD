@@ -1,15 +1,15 @@
-<?php include('./components/navbar.php'); ?>
+<?php include('./komponen/navbar.php'); ?>
 <section>
     <h1 class="sectionTitle">Recommend Songs</h1>
     <div class="cards">
         <?php foreach ($randomKeys as $key) : ?>
-            <div class="card" data="<?php echo $songs[$key]["id"]; ?>">
+            <div class="card" data="<?php echo $song[$key]["song_id"]; ?>">
                 <div class="imgContainer">
-                    <img src="<?php echo $songs[$key]["img"]; ?>" alt="">
+                    <img src="<?php echo $song[$key]["image_path"]; ?>" alt="">
                 </div>
                 <div class="cardInfo">
-                    <h3><?php echo $songs[$key]["title"]; ?></h3>
-                    <h5><?php echo $songs[$key]["singerName"]; ?></h5>
+                    <h3><?php echo $song[$key]["judul"]; ?></h3>
+                    <h5><?php echo $song[$key]["penyanyi"]; ?></h5>
                 </div>
             </div>
         <?php endforeach; ?>
@@ -18,22 +18,22 @@
 <section>
     <h1 class="sectionTitle">New Songs</h1>
     <div class="cards">
-        <div class="card" data="<?php echo $songs[0]["id"]; ?>">
+        <div class="card" data="<?php echo $song[0]["song_id"]; ?>">
             <div class="imgContainer">
-                <img src="<?php echo $songs[0]["img"]; ?>" alt="">
+                <img src="<?php echo $song[0]["image_path"]; ?>" alt="">
             </div>
             <div class="cardInfo">
-                <h3><?php echo $songs[0]["title"]; ?></h3>
-                <h5><?php echo $songs[0]["singerName"]; ?></h5>
+                <h3><?php echo $song[0]["judul"]; ?></h3>
+                <h5><?php echo $song[0]["penyanyi"]; ?></h5>
             </div>
         </div>
-        <div class="card" data="<?php echo $songs[1]["id"]; ?>">
+        <div class="card" data="<?php echo $song[1]["song_id"]; ?>">
             <div class="imgContainer">
-                <img src="<?php echo $songs[1]["img"]; ?>" alt="">
+                <img src="<?php echo $song[1]["image_path"]; ?>" alt="">
             </div>
             <div class="cardInfo">
-                <h3><?php echo $songs[1]["title"]; ?></h3>
-                <h5><?php echo $songs[1]["singerName"]; ?></h5>
+                <h3><?php echo $song[1]["judul"]; ?></h3>
+                <h5><?php echo $song[1]["penyanyi"]; ?></h5>
             </div>
         </div>
     </div>

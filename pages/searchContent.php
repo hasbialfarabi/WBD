@@ -2,11 +2,10 @@
 if (isset($_GET['search'])) {
     $filterTexts = $_GET['search'];
     // Get songs from database
-    $songsFilterQuery = "SELECT songs.id, songs.title title, singers.name singerName, 
-                        songs.filePath audio, songs.imgPath img, singers.id singerID
-                        FROM songs 
-                        LEFT JOIN singers on singers.id = songs.singerID
-                        WHERE title LIKE '%$filterTexts%' OR singers.name LIKE '%$filterTexts%'";
+    $songsFilterQuery = "SELECT songs_id, judul, album.penyanyi, song.tanggal_terbit
+                        FROM song
+                        LEFT JOIN album on  = album.album_id
+                        WHERE judul LIKE '%$filterTexts%' OR album LIKE '%$filterTexts%'";
 
     $result = mysqli_query($conn, $songsFilterQuery);
     $songs = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -31,8 +30,7 @@ if (isset($_GET['search'])) {
                     <h4><?php echo $index + 1; ?> </h4>
                     <img src="<?php echo $song['img']; ?>">
                     <div class="detail">
-                        <h4><?php echo $song['title']; ?></h4>
-                        <h5 class="singerPage" data-singer="<?php echo $song["singerID"]; ?>"><?php echo $song['singerName']; ?></h5>
+                        <h4><?php echo $song['judul']; ?></h4>
                     </div>
                 </div>
                 <div class="func">
