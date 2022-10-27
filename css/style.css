@@ -423,3 +423,148 @@ li.playing .stroke:nth-child(3) {
 .sectonTitle {
     font-weight: 500;
 }
+
+/* Nav bar */
+nav {
+    padding: 2rem 2rem;
+    height: 10vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.logo-container {
+    width: 3rem;
+    height: 3rem;
+    margin-left: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.logo-links {
+    background: white;
+    padding: 1rem 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 400%;
+    transform: translate(-75%, 100%);
+    background-color: black;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s linear;
+}
+
+.logo-active {
+    transform: translate(-75%, 105%);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.logo-links h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    padding: .5rem 0; 
+    color: #1DB954;
+}
+
+.logo-links li {
+    width: 100%;
+    text-align: center;
+    display: flex;
+}
+
+.logo-links a {
+    text-decoration: none;
+    color: whitesmoke;
+    width: 200%;
+    padding: .2rem 0.2rem;
+    transition: all 0.1s ease;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.logo-links a:hover {
+    transform: scale(1.05);
+}
+
+/* Login modal */
+.login-modal {
+    position: absolute;
+    width: 50%;
+    height: 50vh;
+    border-radius: 5px;
+    background: rgb(24, 24, 24);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100;
+    transition: all .5s ease-in-out;
+}
+
+.login-modal.active {
+    opacity: 1;
+    pointer-events: all;
+    transform: translate(-50%, -50%);
+}
+
+.login-modal__logo,
+.login-modal__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-modal__info {
+    position: relative;
+}
+
+.login-modal__logo i {
+    font-size: 150px;
+    color: #1DB954;
+    margin: 20px 0;
+}
+
+.login-modal__info .login {
+    padding: 5px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    margin-top: 20px;
+    background-color: #1DB954;
+}
+
+.login-modal__info .signup {
+    color: white;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.login-modal .close {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    padding: 0 10px;
+    font-size: 30px;
+    transform: rotate(45deg);
+}
+
+
