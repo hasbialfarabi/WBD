@@ -164,3 +164,262 @@ body {
 
 /* End sidebar */
 
+/* Music player section */
+.musicPlayerContainer {
+    width: 100%;
+    height: 15vh;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.musicPlayerContainer * {
+    height: 100%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+/* Music Info */
+.musicInfo {
+    width: 25%;
+    justify-content: space-between;
+}
+
+.musicInfo img {
+    height: 80px;
+    width: 80px;
+}
+
+.musicDetail {
+    font-family: 'Source Sans Pro', sans-serif;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.musicDetail h4,
+.musicDetail h5 {
+    margin-top: 8px;
+}
+
+.musicDetail h5 {
+    color: rgba(235, 221, 221, 0.521);
+}
+
+.musicInfo i {
+    cursor: pointer;
+}
+
+
+/* Music Player */
+.musicPlayer {
+    width: 40%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.navigation {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.action-btn {
+    color: white;
+    background: none;
+    border: 0;
+    font-size: 15px;
+    padding: 7px;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.action-btn-big {
+    font-size: 20px;
+}
+
+.action-btn:focus {
+    outline: 0;
+}
+
+.progressContainer,
+.volumeInfo {
+    background: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px 0;
+    padding: 0;
+    height: 7px;
+    width: 80%;
+}
+
+/* Volume and progress section */
+.progress,
+.volume {
+    padding: 0;
+    background-color: gray;
+    border-radius: 2px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.funcContainer {
+    width: 25%;
+    display: flex;
+    padding: 3rem;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.volumeInfo {
+    width: 40%;
+    height: 4px;
+    padding: 0;
+}
+
+.volume {
+    width: 100%;
+    height: 4px;
+    padding: 0;
+    background-color: lightgreen;
+}
+
+#playtist {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.queue {
+    position: absolute;
+    min-height: 30vh;
+    padding: 20px 0;
+    top: 0;
+    right: 0;
+    width: 25%;
+    pointer-events: none;
+    opacity: 0;
+    /* opacity: 0; */
+    transform: translate(100%, -100%);
+    display: block;
+    background: black;
+    overflow-y: scroll;
+    transition: all 0.4s ease-in;
+}
+
+.queue.queue-active {
+    pointer-events: all;
+    opacity: 1;
+    transform: translateY(-100%);
+}
+
+.queue-title {
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.queue-title i {
+    padding: 0 20px;
+    min-height: 50px;
+    font-size: 25px;
+    cursor: pointer;
+    transform: rotate(90deg);
+    color: lightgreen;
+}
+
+.playing-songs {
+    display: block;
+    width: 100%;
+}
+
+.playing-songs li {
+    width: 100%;
+    padding: 2px 20px;
+    height: 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.playing-songs li:hover {
+    background: rgb(70, 68, 68);
+}
+
+.playing-songs .beat-container {
+    margin-left: auto;
+}
+
+.playing-songs .stroke {
+    display: block;
+    padding: 0;
+    height: 50%;
+    min-width: 4px;
+    background-color: #1DB954;
+    margin: 0 1px;
+    opacity: 0;
+}
+
+li.playing {
+    color: #1DB954;
+}
+
+li.playing .stroke {
+    opacity: 1;
+    animation: beating .7s linear infinite;
+}
+
+@keyframes beating {
+    50% {
+        height: 10%;
+    }
+    100% {
+        height: 50%;
+    }
+}
+
+li.playing .stroke:nth-child(1) {
+    animation-delay: 0.1s;
+}
+li.playing .stroke:nth-child(2) {
+    animation-delay: 0.3s;
+}
+li.playing .stroke:nth-child(3) {
+    animation-delay: 0.1s;
+}
+/* End musicplayer section */
+
+/* Musics container */
+.musicContainer {
+    flex: 9;
+    height: 100%;
+    background-image: linear-gradient(180deg, rgb(48, 47, 47), rgb(12, 12, 12));
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.musicContainer section {
+    width: 95%;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+.sectonTitle {
+    font-weight: 500;
+}
