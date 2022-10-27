@@ -1,3 +1,7 @@
+<?php 
+include("./utilities/dbconnection.php");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,8 +51,6 @@
             </div>
             <!-- End Music UI -->
         </div>
-         <!-- Music Player -->
-         <?php include("./components/musicPlayer.php"); ?>
     </div>
 </body>
 
