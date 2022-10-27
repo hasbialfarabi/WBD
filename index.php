@@ -24,11 +24,32 @@
             <a href="./auth/signup.php" class="signup">Haven't create an account yet?</a>
             <div class="close">+</div>
         </div>
-
-
     </div>
+    <div class="container">
+        <div class="konten">
+            <!-- Bagian pinggir web (sidebar) -->
+            <?php include("./komponen/sidebar.php"); ?>
+            <!-- end sidebar -->
 
-
+            <!-- Music UI -->
+            <div class="musicContainer" id="home">
+                <?php include("./pages/homeContent.php"); ?>
+            </div>
+            <div class="musicContainer hide"
+            id="search">
+                <?php include("./pages/searchContent.php"); ?>
+            </div>
+            <div class="musicContainer hide" id="singer">
+                <?php include("./pages/singerContent.php"); ?>
+            </div>
+            <div class="musicContainer hide" id="album">
+                <?php include("./pages/singerContent.php"); ?>
+            </div>
+            <!-- End Music UI -->
+        </div>
+         <!-- Music Player -->
+         <?php include("./components/musicPlayer.php"); ?>
+    </div>
 </body>
 
 </html>
