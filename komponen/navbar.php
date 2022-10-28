@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="logo-container">
-        <img src="./images/users/default.png" alt="" class="logo">
+        <img src="../img/default.png" alt="" class="logo">
         <ul class="logo-links">
             <h3><?php echo $username; ?></h3>
             <?php if ($authenticated) : ?>

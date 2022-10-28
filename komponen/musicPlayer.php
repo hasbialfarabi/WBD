@@ -1,6 +1,6 @@
 <div class="musicPlayerContainer">
     <div class="musicInfo">
-        <img id="imgCover" src="./images/logo.jpg" alt="">
+        <img id="imgCover" src="../img/AlbumCover1.jpg" alt="">
         <div class="musicDetail">
             <h4 id="title"></h4>
             <h5 id="singerName"></h5>
@@ -25,7 +25,7 @@
         <audio id="audio" src="#"></audio>
     </div>
     <div class="funcContainer">
-        <img id="playtist" src="./images/icons/queue.png" alt="" />
+        <img id="playtist" src="../img/AlbumCover.jpg" alt="" />
         <i class="fas fa-volume-up" id="mute"></i>
         <div class="volumeInfo">
             <div class="volume"></div>
