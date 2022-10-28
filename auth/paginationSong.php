@@ -1,6 +1,6 @@
 <?php
 
-include("../utils/dbConnection.php");
+include("../utilities/dbConnection.php");
 $sql = "SELECT * FROM songs";
 $result = mysqli_query($conn, $sql);
 $songs = mysqli_fetch_all($result, MYSQLI_ASSOC);

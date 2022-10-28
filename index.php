@@ -1,4 +1,34 @@
+<?php 
+include('./auth/auth.php');
+include("../utilities/dbconnection.php");
 
+
+function redirect($url)
+{
+    echo "<script type='text/javascript'>document.location.href='{$url}';</script>";
+    echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $url . '">';
+}
+
+$getAllSongsQuery = "SELECT songs_id, judul,
+                            song.audio_path, song.image_path,
+                            album.judul, album.penyanyi, album.total_duration
+                    FROM song
+                    LEFT JOIN album on album.album_id = song.album_id
+                    ORDER BY song.tanggal_terbit DESC";
+
+$result = mysqli_query($conn, $getAllSongsQuery);
+$songs = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+// Generate random songs
+$randomKeys = (count($songs) >= 3) ? array_rand($songs, 3) : $songs;
+
+$formatSongs = array();
+
+foreach ($songs as $song) {
+    $formatSongs[$song["id"]] = $song;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
