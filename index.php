@@ -1,6 +1,6 @@
 <?php 
 include('./auth/auth.php');
-include("../utilities/dbconnection.php");
+include("./utilities/dbconnection.php");
 
 
 function redirect($url)
@@ -9,7 +9,7 @@ function redirect($url)
     echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $url . '">';
 }
 
-$getAllSongsQuery = "SELECT songs_id, judul,
+$getAllSongsQuery = "SELECT song_id, song.judul,
                             song.audio_path, song.image_path,
                             album.judul, album.penyanyi, album.total_duration
                     FROM song
@@ -25,7 +25,7 @@ $randomKeys = (count($songs) >= 3) ? array_rand($songs, 3) : $songs;
 $formatSongs = array();
 
 foreach ($songs as $song) {
-    $formatSongs[$song["id"]] = $song;
+    $formatSongs[$song["song_id"]] = $song;
 }
 
 ?>
