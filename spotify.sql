@@ -90,7 +90,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `email`, `password`, `username`, `isAdmin`) VALUES
-(1, 'hasbialfarabi@gmail.com', '123456789', 'hasbi', 0),
+(1, 'hasbialfarabi@gmail.com', '123456789', 'hasbi', 1),
 (2, 'meidityaputra@gmail.com', '123456789', 'putra', 0);
 
 --
